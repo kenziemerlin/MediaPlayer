@@ -1,0 +1,61 @@
+﻿<Window x:Class="MediaPlayerApplication.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MediaPlayerApplication"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="550">
+
+    <Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.Open" Executed="Open_Executed"/>
+        
+        <!--<CommandBinding Command="ApplicationCommands.Exit" Executed="Edit_Executed"/>
+        <CommandBinding Command="ApplicationCommands.Tag" Executed="Tag_Executed"/>-->
+
+        <CommandBinding Command="MediaCommands.Play" Executed="Play_Executed"/>
+        <CommandBinding Command="MediaCommands.Pause" Executed="Pause_Executed"/>
+        <CommandBinding Command="MediaCommands.Stop" Executed="Stop_Executed"/>
+    </Window.CommandBindings>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2">
+            <Menu Height="19">
+                <MenuItem Header="_File">
+                    <MenuItem Header="_Open MP3" InputGestureText="Ctrl+O" Command="ApplicationCommands.Open"/>
+                    <MenuItem Header="_Tag Current MP3"/>
+                    <MenuItem Header="_Exit"/>
+                </MenuItem>
+                <MenuItem Header="_Edit">
+                </MenuItem>
+                <MenuItem x:Name="mediaMenuItem" Header="_Media" Visibility="Hidden">
+                    <MenuItem Header="_Play" Command="MediaCommands.Play"/>
+                    <MenuItem Header="_Pause" Command="MediaCommands.Pause"/>
+                    <MenuItem Header="_Stop" Command="MediaCommands.Stop"/>
+                </MenuItem>
+            </Menu>
+        </StackPanel>
+        <StackPanel Grid.Column="0" Grid.Row="1">
+            <Button Name="btn1" Width="100" Height="100" Command="ApplicationCommands.Open">
+                <Image Source="images/open_file.png"/>
+            </Button>
+            <Button Name="btn2" Width="100" Height="100" Command="ApplicationCommands.Open">
+                <Image Source="images/musicnote.png"></Image>
+            </Button>
+            <Button Name="btn3" Width="100" Height="100" Command="ApplicationCommands.Open">
+                <Image Source="images/edit.png" ></Image>
+            </Button>
+        </StackPanel>
+        <StackPanel x:Name="MediaContent" Grid.Row="1" Grid.Column="1">
+            
+        </StackPanel>
+    </Grid>
+</Window>

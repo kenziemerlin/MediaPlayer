@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="images\media-play.png" />
+    <None Remove="images\open_file.png" />
+    <None Remove="images\pause-icon.png" />
+    <None Remove="images\stop-icon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="TagLibSharp" Version="2.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="images\media-play.png" />
+    <Resource Include="images\open_file.png" />
+    <Resource Include="images\pause-icon.png" />
+    <Resource Include="images\stop-icon.png" />
+  </ItemGroup>
+
+</Project>

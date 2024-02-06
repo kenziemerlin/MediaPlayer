@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="MediaPlayerApplication.MediaPlayerUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MediaPlayerApplication"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="300">
+    <StackPanel>
+        <Image x:Name="MediaImage" Height="250" Width="250"/>
+        <Label x:Name="TitleLabel" Content="Title" HorizontalAlignment="Center"/>
+        <Label x:Name="ArtistLabel" Content="Artist" HorizontalAlignment="Center"/>
+        <Label x:Name="AlbumLabel" Content="Album" HorizontalAlignment="Center"/>
+        <Label x:Name="YearLabel" Content="Year" HorizontalAlignment="Center"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button HorizontalAlignment="Center" Command="MediaCommands.Play">
+                <Image Source="images/media-play.png" Height="25"/>
+            </Button>
+            <Button HorizontalAlignment="Center" Command="MediaCommands.Pause">
+                <Image Source="images/pause-icon.png" Height="25"/>
+            </Button>
+            <Button HorizontalAlignment="Center" Command="MediaCommands.Stop">
+                <Image Source="images/stop-icon.png" Height="25"/>
+            </Button>
+        </StackPanel>
+    </StackPanel>
+</UserControl>

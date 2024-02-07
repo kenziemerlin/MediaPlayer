@@ -47,9 +47,6 @@ namespace MediaPlayerApplication
             ArtistLabel.Content = this.Artist;
             AlbumLabel.Content = this.Album;
             YearLabel.Content = this.Year;
-            
-
-
         }
     }
 }

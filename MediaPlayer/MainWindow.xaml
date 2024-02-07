@@ -5,17 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MediaPlayerApplication"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="550">
+        Title="MainWindow" Height="700" Width="550">
 
     <Window.CommandBindings>
-        <CommandBinding Command="ApplicationCommands.Open" Executed="Open_Executed"/>
-        
-        <!--<CommandBinding Command="ApplicationCommands.Exit" Executed="Edit_Executed"/>
-        <CommandBinding Command="ApplicationCommands.Tag" Executed="Tag_Executed"/>-->
-
-        <CommandBinding Command="MediaCommands.Play" Executed="Play_Executed"/>
-        <CommandBinding Command="MediaCommands.Pause" Executed="Pause_Executed"/>
-        <CommandBinding Command="MediaCommands.Stop" Executed="Stop_Executed"/>
+        <CommandBinding Command="ApplicationCommands.Open" Executed="Open_Executed" CanExecute="Open_CanExecute"></CommandBinding>
+        <CommandBinding Command="MediaCommands.Play" Executed="Play_Executed" CanExecute="Play_CanExecute"></CommandBinding>
+        <CommandBinding Command="MediaCommands.Pause" Executed="Pause_Executed" CanExecute="Pause_CanExecute"></CommandBinding>
+        <CommandBinding Command="MediaCommands.Stop" Executed="Stop_Executed" CanExecute="Stop_CanExecute"/>
     </Window.CommandBindings>
 
     <Grid>
@@ -25,6 +21,7 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="400"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2">
@@ -44,18 +41,44 @@
             </Menu>
         </StackPanel>
         <StackPanel Grid.Column="0" Grid.Row="1">
-            <Button Name="btn1" Width="100" Height="100" Command="ApplicationCommands.Open">
+            <Button Name="openBtn" Width="100" Height="100" Command="ApplicationCommands.Open">
                 <Image Source="images/open_file.png"/>
             </Button>
             <Button Name="btn2" Width="100" Height="100" Command="ApplicationCommands.Open">
                 <Image Source="images/musicnote.png"></Image>
             </Button>
-            <Button Name="btn3" Width="100" Height="100" Command="ApplicationCommands.Open">
+            <Button Name="editBtn" Width="100" Height="100" Click="EditBtn_Click">
                 <Image Source="images/edit.png" ></Image>
             </Button>
         </StackPanel>
         <StackPanel x:Name="MediaContent" Grid.Row="1" Grid.Column="1">
             
+        </StackPanel>
+        <StackPanel x:Name ="EditForm" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" Visibility="Hidden">
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                <Label Content="Title:" Width="80"/>
+                <TextBox x:Name="TitleTextBox" Width="200"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                <Label Content="Artist:" Width="80"/>
+                <TextBox x:Name="ArtistTextBox" Width="200"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                <Label Content="Album:" Width="80"/>
+                <TextBox x:Name="AlbumTextBox" Width="200"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                <Label Content="Year:" Width="80"/>
+                <TextBox x:Name="YearTextBox" Width="200"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Content="Save" Click="Save_Click" Margin="0,10,10,0"/>
+                <Button Content="Cancel" Click="Cancel_Click" Margin="0,10,0,0"/>
+            </StackPanel>
         </StackPanel>
     </Grid>
 </Window>

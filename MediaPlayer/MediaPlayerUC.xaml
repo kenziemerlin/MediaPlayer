@@ -12,6 +12,7 @@
         <Label x:Name="ArtistLabel" Content="Artist" HorizontalAlignment="Center"/>
         <Label x:Name="AlbumLabel" Content="Album" HorizontalAlignment="Center"/>
         <Label x:Name="YearLabel" Content="Year" HorizontalAlignment="Center"/>
+        
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
             <Button HorizontalAlignment="Center" Command="MediaCommands.Play">
                 <Image Source="images/media-play.png" Height="25"/>

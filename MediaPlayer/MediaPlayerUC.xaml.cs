@@ -26,20 +26,18 @@ namespace MediaPlayerApplication
         public string? Album { get; set; }
         public uint? Year { get; set; }
 
-        public Image? image { get; set; }
-
         public MediaPlayerUC()
         {
             InitializeComponent();
         }
 
-        public MediaPlayerUC(string songTitle, string artist, string album, uint year, Image? myImage)
+        public MediaPlayerUC(string songTitle, string artist, string album, uint year)
         {
             SongTitle = songTitle;
             Artist = artist;
             Album = album;
             Year = year;
-            image = myImage;
+
 
             InitializeComponent();
 

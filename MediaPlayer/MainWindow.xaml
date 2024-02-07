@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MediaPlayerApplication"
         mc:Ignorable="d"
-        Title="MainWindow" Height="700" Width="550">
+        Title="MainWindow" Height="700" Width="550"
+        Background="LightPink">
+        
 
     <Window.CommandBindings>
         <CommandBinding Command="ApplicationCommands.Open" Executed="Open_Executed" CanExecute="Open_CanExecute"></CommandBinding>
@@ -28,10 +30,10 @@
             <Menu Height="19">
                 <MenuItem Header="_File">
                     <MenuItem Header="_Open MP3" InputGestureText="Ctrl+O" Command="ApplicationCommands.Open"/>
-                    <MenuItem Header="_Tag Current MP3"/>
-                    <MenuItem Header="_Exit"/>
+                    <MenuItem Header="_Tag Current MP3" Click="EditBtn_Click"/>
+                    <MenuItem Header="_Exit" Click="Exit_Click"/>
                 </MenuItem>
-                <MenuItem Header="_Edit">
+                <MenuItem Header="_Edit" Click="EditBtn_Click">
                 </MenuItem>
                 <MenuItem x:Name="mediaMenuItem" Header="_Media" Visibility="Hidden">
                     <MenuItem Header="_Play" Command="MediaCommands.Play"/>
@@ -40,11 +42,11 @@
                 </MenuItem>
             </Menu>
         </StackPanel>
-        <StackPanel Grid.Column="0" Grid.Row="1">
+        <StackPanel Grid.Column="0" Grid.Row="1" VerticalAlignment="Center">
             <Button Name="openBtn" Width="100" Height="100" Command="ApplicationCommands.Open">
                 <Image Source="images/open_file.png"/>
             </Button>
-            <Button Name="btn2" Width="100" Height="100" Command="ApplicationCommands.Open">
+            <Button Name="btn2" Width="100" Height="100" Click="Cancel_Click">
                 <Image Source="images/musicnote.png"></Image>
             </Button>
             <Button Name="editBtn" Width="100" Height="100" Click="EditBtn_Click">

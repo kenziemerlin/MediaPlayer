@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="400" d:DesignWidth="300">
     <StackPanel>
-        <Image x:Name="MediaImage" Height="250" Width="250"/>
+        <Image Source="images/tunes.png" Height="250" Width="250"/>
         <Label x:Name="TitleLabel" Content="Title" HorizontalAlignment="Center"/>
         <Label x:Name="ArtistLabel" Content="Artist" HorizontalAlignment="Center"/>
         <Label x:Name="AlbumLabel" Content="Album" HorizontalAlignment="Center"/>

@@ -15,6 +15,7 @@
     <None Remove="images\open_file.png" />
     <None Remove="images\pause-icon.png" />
     <None Remove="images\stop-icon.png" />
+    <None Remove="images\tunes.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -28,6 +29,7 @@
     <Resource Include="images\open_file.png" />
     <Resource Include="images\pause-icon.png" />
     <Resource Include="images\stop-icon.png" />
+    <Resource Include="images\tunes.png" />
   </ItemGroup>
 
 </Project>
